@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        /*
+            链接<a>
+            四种链接状态，每种状态都可以设置其颜色、字体、背景等：
+            1. a:link  正常，未访问过的链接
+            2. a:visited 访问过的链接
+            3. a:hover  用户鼠标放在链接上
+            4. a:active  链接被点击的那一刻
+
+        */
+
+        /* 
+            未访问过的链接 和 访问过的链接
+            color: 字体颜色
+            text-decoration: 下划线
+
+        */
+        a.one:link,
+        a.one:visited {
+            display: block;
+            font-weight: bold;
+            color: #FFFFFF;
+            background-color: #98bf21;
+            width: 120px;
+            text-align: center;
+            padding: 4px;
+            text-decoration: none;
+        }
+
+        /*
+            鼠标放在链接上
+        */
+        a.one:hover {
+            color: #FF00FF;
+            text-decoration: underline;
+            background-color: #FF704D;
+            font-size: 30px;
+        }
+
+        /*
+            点击链接瞬间
+        */
+        a.one:active {
+            color: #0000FF;
+            text-decoration: underline;
+            background-color: #FF704D;
+        }
+    </style>
+</head>
+
+<body>
+    <a class="one" href="http://www.baidu.com" target="_blank">百度</a>
+</body>
+
+</html>

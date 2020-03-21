@@ -1,0 +1,113 @@
+<!-- 
+    CSS(Cascading Style Sheets): 层叠样式表
+    
+    CSS语法
+    CSS规则由两个主要的部分构成：选择器，以及一条或多条声明。
+    
+    选择器：
+    1.HTML元素选择器。例如p{color: red;}, 表示适用于<p>标签的样式。
+    2.id选择器：例如#para1{background-color: blue;}
+    3.class选择器: 例如.center{text-align:center}
+    
+    每条声明由一个属性和一个值组成。
+    属性（property）是您希望设置的样式属性（style attribute）。
+    每个属性有一个值。属性和值被冒号分开。
+
+    定义样式的地方：
+    1.直接在标签中用属性style定义；
+    2.在<head>标签的<style>标签中定义样式；
+    3.外部定义css文件，再引入html文件；
+ -->
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- 外部引入的样式表 -->
+    <link rel="stylesheet" type="text/css" href="./style/mystyle.css" charset="utf-8">
+    <!-- 定义在head中的样式 -->
+    <style>
+        /* <p>标签选择器 默认没有设置样式的<p>标签，都会使用这里的样式*/
+        p {
+            color: blue;
+            text-align: center;
+        }
+
+        /* id选择器：用#开头 */
+        #idSelector {
+            color: yellow;
+            text-align: center;
+            background-color: gray;
+        }
+
+        /* class类选择器 */
+        .classSelector {
+            color: orange;
+            text-align: center;
+        }
+
+        /* <p>标签的类选择器 只对<p>标签有效，其他标签设置了也没有效果*/
+        p.center {
+            color: green;
+            text-align: right;
+        }
+
+        /* 外部也定义了这个样式,颜色不一样 */
+        h1 {
+            color: green;
+        }
+    </style>
+
+
+</head>
+
+
+
+<body>
+    <!-- 
+        1.内部样式表CSS：
+        定义在<head>标签的<style>标签内
+        本html文件内部共用，所有本html文件内的标签都可以使用这些样式
+    -->
+    <!-- 1.1 标签选择器 -->
+    <p>我是通过CSS标签选择器设置的样式</p>
+    <hr>
+    <!-- 1.2 id选择器 -->
+    <p id="idSelector">我是通过id选择器设置的样式</p>
+    <hr>
+    <!-- 1.3 class类选择器 -->
+    <p class="classSelector">我是通过class选择器设置的样式</p>
+    <hr>
+
+    <!-- 1.3 class类选择器(指定标签) -->
+    <p class="center">我是通过class选择器设置的样式(指定标签)</p>
+    <hr>
+
+    <!-- 
+        2.外部样式表CSS 
+        使用外部引入的样式；
+        一个样式表可以提供给多个html文件使用，达到复用的目的 
+    -->
+    <div id="divStyle">我是外部引入的样式</div>
+    <hr class="hrStyle">
+
+    <!-- 
+        3. 内联样式：
+        直接定义在标签内，用属性style来定义样式；
+        不灵活，不建议使用 
+    -->
+    <p style="color:sienna; margin-left: 20px">我是内联样式，直接写在标签里的</p>
+    <hr>
+
+    <!-- 
+        多重样式 
+        一个标签可能会套用到多个样式，其优先级顺序是：
+        按html代码执行顺序，晚定义的会覆盖早定义的同类样式
+        下面的<h1>样式，因为外部加载的样式表先与内部定义的样式表，所以被内部定义的样式表覆盖，最终使用内部定义的样式表。
+    -->
+    <h1>我是多重样式，离我越近的优先级越高</h1>
+
+</body>
+
+</html>

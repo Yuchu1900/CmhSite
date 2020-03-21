@@ -1,0 +1,192 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        /* 
+            一、背景
+            background-color：背景颜色
+            background-image：背景图片
+            background-repeat：背景图片平铺方式
+            background-attachment：背景图片是否固定或者随着页面的其余部分滚动。
+            background-position：背景图片的起始位置
+        */
+        /* 背景颜色 */
+        body {
+            background-color: #b0c4de;
+        }
+
+        /* 
+            背景平铺方式
+            repeat: 平铺(默认选项)
+            repeat-x：水平平铺
+            repeat-y: 垂直平铺
+            no-repeat: 没有平铺
+
+        */
+        .bg_div {
+            background-color: yellow;
+            background-image: url("./images/chick.jpg");
+            background-repeat: no-repeat;
+            background-position: bottom right;
+            background-attachment: scroll;
+            width: 700px;
+            height: 550px;
+        }
+
+        /*
+            二、文本
+            1. 字体颜色: color
+            2. 对齐方式：text-align
+                left: 左对齐(默认)
+                right: 右对齐
+                center: 中间对齐
+                justify: 两端对齐
+            3. 文本修饰: text-decoration
+                none: 没有修饰
+                overline: 上划线
+                line-through: 中间贯穿线 
+                underline: 下划线
+            4. 文本转换: text-transform
+                uppercase: 全部大写
+                lowercase: 全部小写
+                capitalize: 首字母大写，其它小写
+            5. 字间距: letter-spacing
+               字间距可以是负数
+            6. 行间距: line-height
+            7. 单词间距: word-spacing
+               这个对中文无效
+            8. 文字阴影: text-shadow:2px 2px #FF0000;
+            9. 文本方向: direction: rtl;//从右到左书写
+            10. 与图片垂直方向的对齐方式： vertical-align:text-top;//顶部对齐
+        */
+        .text_p {
+            color: rgb(255, 0, 0);
+            text-align: justify;
+            text-decoration: underline;
+            text-transform: uppercase;
+            text-indent: 50px;
+            letter-spacing: 2px;
+            line-height: 200%;
+            word-spacing: 20px;
+            text-shadow: 2px 2px #000000;
+
+        }
+
+        /*
+            三、字体
+            1. 字体: font-family
+            在CSS中，有两种类型的字体系列名称：
+                通用字体系列 - 拥有相似外观的字体系统组合（如 "Serif" 或 "Monospace"）
+                特定字体系列 - 一个特定的字体系列（如 "Times" 或 "Courier"）
+            通用字体系列	      特定字体系列	            说明
+            Serif	            Times New Roman
+                                Georgia	               Serif字体中字符在行的末端拥有额外的装饰
+            Sans-serif	        Arial
+                                Verdana	               "Sans"是指无 - 这些字体在末端没有额外的装饰
+            Monospace	        Courier New
+                                Lucida Console	       所有的等宽字符具有相同的宽度
+            通用字体与特体字体，不是随便组合的，而是有比较合适的组合，可查相关文档。
+            查询系统字体库里现有的字体都可以设置
+            2.样式：font-style
+            normal: 普通
+            italic: 斜体
+            oblique: 一种倾斜字体，和斜体类似，不常用
+            3.字体大小：font-size
+            浏览器默认字体大小是16px。
+            为了避免Internet Explorer 中无法调整文本的问题，许多开发者使用 em 单位代替像素。
+            1em = 16px
+            也可以用百分比来设置字体大小，100%相当于16px
+            4.字体粗细：font-weight
+            normal: 普通粗细，相当于400
+            bold: 加粗，相当于700
+        */
+        #font_p {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        #font_p_black {
+            font-family: "黑体";
+        }
+
+        #font_p_song {
+            font-family: "行楷-简";
+        }
+
+        #font_p_huawenfangsong {
+            font-family: "华文仿宋";
+        }
+
+        #font_p_libianjian {
+            font-family: "隶变-简";
+        }
+
+        /* 斜体 */
+        #font_p_italic {
+            font-style: italic;
+        }
+
+        /* 字体大小 */
+        #font_p_size {
+            font-size: 30px;
+        }
+
+        #font_p_siez_em {
+            font-size: 1.5em;
+        }
+
+        #font_p_weight {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 背景 -->
+    <div class="bg_div">div的背景颜色是黄色，还有背景图片靠右下角</div>
+    <!-- 文本 -->
+    <p class="text_p">
+        这是一个套了样式的段落。颜色是红色，对齐方式是两端对齐，并且又下划线，为了转换，还得来一段英文，全部变成大写字母: My name is
+        Hanmeimei。再来个缩进50px，文本缩进属性是用来指定文本的第一行的缩进。字间距是2px，行间距是200%。文字还又阴影。
+    </p>
+
+    <!-- 字体 -->
+    <p id="font_p">
+        My name is Hanmeimei.
+    </p>
+    <p>
+        这段文字是默认字体
+    </p>
+    <p id="font_p_black">
+        这段文字是黑体字
+    </p>
+    <p id="font_p_song">
+        这段文字是行楷简体
+    </p>
+    <p id="font_p_huawenfangsong">
+        这段文字是华文仿宋
+    </p>
+
+    <p id="font_p_libianjian">
+        这段文字是隶变简体
+    </p>
+
+    <p id="font_p_italic">
+        这段文字是斜体字
+    </p>
+
+    <p id="font_p_size">
+        这段文字字体大小是30px
+    </p>
+
+    <p id="font_p_siez_em">
+        这段文字字体大小是1.5em
+    </p>
+    <p id="font_p_weight">
+        这段文字字体粗细是150%
+    </p>
+</body>
+
+</html>
