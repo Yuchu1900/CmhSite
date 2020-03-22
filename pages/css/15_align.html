@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        /* 元素水平居中 */
+        .center {
+            margin: auto;
+            width: 30%;
+            border: 3px solid#73ad21;
+            padding: 10px;
+        }
+
+        /*  文本居中 */
+        .text_center {
+            text-align: center;
+            border: 3px solid orange;
+        }
+
+        /* 图片居中 */
+        .img_center {
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* 
+            左右对齐(用定位方式)
+            当使用 position 来对齐元素时, 通常 <body> 元素会设置 margin 和 padding 。 这样可以避免在不同的浏览器中出现可见的差异。
+            当使用 position 属性时，IE8 以及更早的版本存在一个问题。如果容器元素（在我们的案例中是 <div class="container">）设置了指定的宽度，并且省略了 !DOCTYPE 声明，那么 IE8 以及更早的版本会在右侧增加 17px 的外边距。这似乎是为滚动条预留的空间。当使用 position 属性时，请始终设置 !DOCTYPE 声明
+        */
+        .right {
+            position: absolute;
+            right: 0px;
+            width: 300px;
+            border: 3px solid #73ad21;
+            padding: 10px;
+        }
+
+        /*
+            左右对齐(用float方式)
+            当像这样对齐元素时，对 <body> 元素的外边距和内边距进行预定义是一个好主意。这样可以避免在不同的浏览器中出现可见的差异。
+            注意：如果子元素的高度大于父元素，且子元素设置了浮动，那么子元素将溢出，这时候你可以使用 "clearfix(清除浮动)" 来解决该问题。
+            我们可以在父元素上添加 overflow: auto; 来解决子元素溢出的问题
+        */
+        .right_float {
+            float: left;
+            width: 300px;
+            border: 3px solid yellowgreen;
+            padding: 10px;
+        }
+
+        /* 
+            用float对象出现溢出问题 
+            可以在父元素上添加 overflow: auto; 来解决子元素溢出的问题
+        */
+        .img_right {
+            float: right;
+        }
+
+        .clearfix {
+            border: 3px solid #4caf50;
+            padding: 5px;
+            overflow: auto;
+        }
+
+        /*
+            垂直居中(使用padding)
+
+        */
+        .verticle_center_padding {
+            padding: 30px 0px;
+            border: 3px solid green;
+        }
+
+        /*
+            垂直居中(使用line-height方式)
+            行高
+        */
+        .verticle_center_line_height {
+            line-height: 200px;
+            height: 200px;
+            border: 3px solid red;
+            /* 顺便文本水平居中 */
+            text-align: center;
+        }
+
+        .verticle_center_p {
+            /* 用line-height实现垂直居中，如是多行文本，<p>标签要加上这个样式*/
+            line-height: 1.5;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /*
+            居中(用position和transform方式)
+            
+        */
+        .center_div_position {
+            height: 200px;
+            position: relative;
+            border: 3px solid green;
+        }
+
+        .center_p_position {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 元素居中 -->
+    <div class="center">
+        <p>块级元素(如div)水平居中, 可以使用 margin: auto</p>
+    </div>
+
+    <!-- 文本居中 -->
+    <div class="text_center">
+        <p>文本居中对齐相对父容器</p>
+    </div>
+
+    <!-- 图片居中 -->
+    <img class="img_center" src="./images/chick.jpg" alt="小鸡" style="width:40%">
+
+    <!-- 左右对齐(用定位方式) -->
+    <!-- <div class="right">
+        <p>用position方式右对齐</p>
+    </div> -->
+
+    <!-- 左右对齐(用float方式) -->
+    <!-- <div class="right_float">
+        <p>用float方式右对齐</p>
+    </div> -->
+
+    <!-- 解决溢出问题 -->
+    <div class="clearfix">
+        用float对象出现溢出问题，可以在父元素上添加 overflow: auto来解决
+        <img class="img_right" src="./images/timg-5.jpeg" alt="图片" width="128" height="128">
+    </div>
+
+    <!-- 垂直居中(用padding方式) -->
+    <div class="verticle_center_padding">
+        <p>我是垂直居中(用padding方式)</p>
+    </div>
+
+    <!-- 单行文本垂直居中(用line-height方式) -->
+    <div class="verticle_center_line_height">
+        <!-- 单行文本 -->
+        <p>
+            我是单行垂直居中，是用line-height实现
+        </p>
+
+
+    </div>
+
+    <!-- 多行文本垂直居中(用line-height方式) -->
+    <div class="verticle_center_line_height">
+        <!-- 多行文本 -->
+        <p class="verticle_center_p">
+            我是多行垂直居中，是用line-height实现
+            我是多行垂直居中，是用line-height实现
+            我是多行垂直居中，是用line-height实现
+            我是多行垂直居中，是用line-height实现
+            我是多行垂直居中，是用line-height实现
+            我是多行垂直居中，是用line-height实现
+        </p>
+    </div>
+
+    <!-- 居中(使用position和transform方式) -->
+    <div class="center_div_position">
+        <p class="center_p_position">我是水平和垂直居中的,用postion和transform实现</p>
+    </div>
+
+
+</body>
+
+</html>

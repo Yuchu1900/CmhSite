@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        /*
+            伪类Pseudo-classes
+            CSS伪类是用来添加一些选择器的特殊效果。伪类的名称不区分大小写。
+            语法：
+            selector: pseudo-class { property:value;}
+            CSS类也可以使用伪类：
+            selector.class: pseudo-class { property:value;}
+
+            选择器	                 示例	                  示例说明
+            :checked	            input:checked	        选择所有选中的表单元素
+            :disabled	            input:disabled	        选择所有禁用的表单元素
+            :empty	                p:empty	                选择所有没有子元素的p元素
+            :enabled	            input:enabled	        选择所有启用的表单元素
+            :first-of-type	        p:first-of-type	        选择的每个 p 元素是其父元素的第一个 p 元素
+            :in-range	            input:in-range	        选择元素指定范围内的值
+            :invalid	            input:invalid	        选择所有无效的元素
+            :last-child	            p:last-child	        选择所有p元素的最后一个子元素
+            :last-of-type	        p:last-of-type	        选择每个p元素是其母元素的最后一个p元素
+            :not(selector)	        :not(p)	                选择所有p以外的元素
+            :nth-child(n)	        p:nth-child(2)	        选择所有 p 元素的父元素的第二个子元素
+            :nth-last-child(n)	    p:nth-last-child(2)	    选择所有p元素倒数的第二个子元素
+            :nth-last-of-type(n)	p:nth-last-of-type(2)	选择所有p元素倒数的第二个为p的子元素
+            :nth-of-type(n)	        p:nth-of-type(2)	    选择所有p元素第二个为p的子元素
+            :only-of-type	        p:only-of-type	        选择所有仅有一个子元素为p的元素
+            :only-child	            p:only-child	        选择所有仅有一个子元素的p元素
+            :optional	            input:optional	        选择没有"required"的元素属性
+            :out-of-range	        input:out-of-range	    选择指定范围以外的值的元素属性
+            :read-only	            input:read-only	        选择只读属性的元素属性
+            :read-write	            input:read-write	    选择没有只读属性的元素属性
+            :required	            input:required	        选择有"required"属性指定的元素属性
+            :root	                root	                选择文档的根元素
+            :target	                #news:target	        选择当前活动#news元素(点击URL包含锚的名字)
+            :valid	                input:valid	            选择所有有效值的属性
+            :link	                a:link	                选择所有未访问链接
+            :visited	            a:visited	            选择所有访问过的链接
+            :active	                a:active	            选择正在活动链接
+            :hover	                a:hover	                把鼠标放在链接上的状态
+            :focus	                input:focus	            选择元素输入后具有焦点
+            :first-letter	        p:first-letter	        选择每个<p> 元素的第一个字母
+            :first-line	            p:first-line	        选择每个<p> 元素的第一行
+            :first-child	        p:first-child	        选择器匹配属于任意元素的第一个子元素的 <p> 元素
+            :before	                p:before	            在每个<p>元素之前插入内容
+            :after	                p:after	                在每个<p>元素之后插入内容
+            :lang(language)	        p:lang(it)	            为<p>元素的lang属性选择一个开始值
+
+            1. anchor伪类
+            链接的不同状态可以不同的方式显示：
+            a:link{ color: #ffff00; }  未访问的链接 
+            a:visited{ color: #00ffff; }  已访问的链接  
+            a:hover{ color: #00ff00; } 鼠标划过链接
+            a:active { color: #ff0000; } 已选中的链接
+
+            2. first-child伪类：
+            first-child 伪类来选择父元素的第一个子元素。
+
+            3. lang 伪类
+            :lang 伪类使你有能力为不同的语言定义特殊的规则
+            q:lang(no){
+                quotes: "~" "~";
+            }
+        */
+
+        /* 1. anchor伪类 */
+        /* 未访问链接*/
+        a:link {
+            color: #ffff00;
+        }
+
+        /* 已访问链接 */
+        a:visited {
+            color: #00FF00;
+        }
+
+        /* 鼠标移动到链接上 */
+        a:hover {
+            color: #FF00FF;
+        }
+
+        /* 鼠标点击时 */
+        a:active {
+            color: #0000FF;
+        }
+
+        /* 2.伪类和CSS类 */
+        a.red:hover {
+            color: #ff0000;
+        }
+
+        /* 3.first-child伪类 
+            可用 first-child 伪类来选择父元素的第一个子元素
+            例如p:first-child{...}
+            那么当<p>标签的父容器下的第一个<p>标签就会生效
+        */
+        p:first-child {
+            color: blue;
+        }
+
+        /* <p>标签下的第一个<i>子元素会生效 */
+        p>i:first-child {
+            color: red;
+        }
+
+        /* 匹配所有作为第一个子元素的 <p> 元素中的所有 <i> 元素 */
+        p:first-child i {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- anchor伪类 -->
+    <p><b><a href="http://www.baidu.com" target="_blank">百度</a></b></p>
+    <p><b></b><a class="red" href="http://www.sina.cn" target="_blank">新浪</a></b></p>
+
+    <!-- first-child伪类：-->
+    <p>我是body元素下的第三个p元素,显示默认的黑色</p>
+    <div>
+        <p>我是div元素下的第一个p元素，整体应该是蓝色的</p>
+        <p>我是div元素下的第二个p元素，但我是第一个<i>i元素</i>元素，应该是红色的，我是第二个<i>i元素</i>，应该还是黑色</i></p>
+    </div>
+
+    <!-- 匹配所有作为第一个子元素的 <p> 元素中的所有 <i> 元素 -->
+    <div>
+        <p>我是div元素下的第一个p元素, 这里的所有<i>i元素</i>应该都是红色的，<i>i元素</i>，<i>i元素</i>，<i>i元素</i></p>
+    </div>
+</body>
+
+</html>

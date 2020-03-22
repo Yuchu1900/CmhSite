@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        /*
+            组合选择符
+            CSS组合选择符包括各种简单选择符的组合方式。
+            在 CSS3 中包含了四种组合方式:
+            1.后代选择器(以空格分隔)：只要p标签是div的子类元素(不管多少层)，都会生效。
+                div p {
+                    ...
+                }
+            2.子元素选择器(以大于号分隔）：当p标签是div标签直接子元素时，才能生效。
+                div>p{
+                    ...
+                }
+            3.相邻兄弟选择器（以加号分隔）：相邻兄弟选择器（Adjacent sibling selector）可选择紧接在另一元素后的元素，且二者有相同父元素。
+              如果需要选择紧接在另一个元素后的元素，而且二者有相同的父元素，可以使用相邻兄弟选择器（Adjacent sibling selector）。
+                div+p{
+                    ...
+                }
+            4.普通兄弟选择器（以破折号分隔）: 后续兄弟选择器选取所有指定元素之后的相邻兄弟元素。
+                div~p{
+                    ...
+                }
+        */
+
+        /* 1. 后代选择器 */
+        /* div p {
+            background-color: yellowgreen;
+        } */
+
+        /* 2. 子元素选择器 */
+        /* div>p {
+            background-color: yellowgreen;
+        } */
+
+
+        /* 3. 相邻兄弟选择器*/
+        /* div+p {
+            background-color: yellowgreen;
+        } */
+
+        /* 4. 后续兄弟选择器 */
+        div~p {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1. 后代选择器 -->
+    <!-- <div>
+        <p>段落1，我在div中,我有背景色</p>
+    </div>
+    <p>段落2，我不在div中，没有背景色</p> -->
+
+    <!-- 2. 子元素选择器 -->
+    <!-- <div>
+        <p>我是div的直接子元素，子元素选择器会生效，有背景色</p>
+    </div>
+    <div>
+        <span>
+            <p>虽然我也在div中，但却是span的直接子元素，子元素选择器不会生效</p>
+        </span>
+    </div>
+    <p>我不是div的子元素，子元素选择器当然不会生效</p> -->
+
+    <!-- 3. 相邻兄弟选择器-->
+    <!-- <div></div>
+    <p>我紧接在div标签后，并且在同一个父容器下，所以相邻兄弟选择器生效</p> -->
+
+
+    <!-- 4. 后续兄弟选择器 -->
+    <p>我在div之前，后续兄弟选择器不会生效</p>
+    <div>
+        <p>我在div之中，后续兄弟选择器也不会生效</p>
+    </div>
+    <p>我是div之后第一个元素，后续兄弟选择器生效</p>
+    <p>我是div之后第二个元素，后续兄弟选择器也会生效</p>
+</body>
+
+</html>

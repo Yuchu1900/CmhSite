@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        /*
+            浮动Float
+            CSS 的 Float（浮动），会使元素向左或向右移动，其周围的元素也会重新排列。
+            Float（浮动），往往是用于图像，但它在布局时一样非常有用。
+            元素的水平方向浮动，意味着元素只能左右移动而不能上下移动。
+            一个浮动元素会尽量向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。
+            浮动元素之后的元素将围绕它。
+            浮动元素之前的元素将不会受到影响。
+            如果图像是右浮动，下面的文本流将环绕在它左边
+
+            如果你把几个浮动的元素放到一起，如果有空间的话，它们将彼此相邻。
+        */
+        img {
+            float: right;
+        }
+
+        img.thumbnail {
+            float: left;
+            width: 138px;
+            height: 138px;
+            margin: 5px;
+        }
+
+        .text_line {
+            clear: both;
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <p style="font-size: 2em;">
+        <img src="./images/timg-10.jpeg" width="128" height="128" />
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+        这是一些文本。这是一些文本。这是一些文本。
+    </p> -->
+
+    <!-- <p>
+        <img class="thumbnail" src="./images/timg-2.jpeg" width="128px" height="128px" />
+        <img class="thumbnail" src="./images/timg-3.jpeg" width="128px" height="128px" />
+        <img class="thumbnail" src="./images/timg-4.jpeg" width="128px" height="128px" />
+        <img class="thumbnail" src="./images/timg-5.jpeg" width="128px" height="128px" />
+        <img class="thumbnail" src="./images/timg-6.jpeg" width="128px" height="128px" />
+        <img class="thumbnail" src="./images/timg-7.jpeg" width="128px" height="128px" />
+        <img class="thumbnail" src="./images/timg-8.jpeg" width="128px" height="128px" />
+        <img class="thumbnail" src="./images/timg-9.jpeg" width="128px" height="128px" />
+        <img class="thumbnail" src="./images/timg-10.jpeg" width="128px" height="128px" />
+        <img class="thumbnail" src="./images/timg-11.jpeg" width="128px" height="128px" />
+
+    </p> -->
+
+    <h1>下面是个图片库</h1>
+    <p>试着调整窗口大小，看看图片没有足够空间会发生什么</p>
+    <img class="thumbnail" src="./images/timg-2.jpeg" width="128px" height="128px" />
+    <img class="thumbnail" src="./images/timg-3.jpeg" width="128px" height="128px" />
+    <img class="thumbnail" src="./images/timg-4.jpeg" width="128px" height="128px" />
+    <img class="thumbnail" src="./images/timg-5.jpeg" width="128px" height="128px" />
+    <img class="thumbnail" src="./images/timg-6.jpeg" width="128px" height="128px" />
+    <h3 class="text_line">第二行</h3>
+    <img class="thumbnail" src="./images/timg-7.jpeg" width="128px" height="128px" />
+    <img class="thumbnail" src="./images/timg-8.jpeg" width="128px" height="128px" />
+    <img class="thumbnail" src="./images/timg-9.jpeg" width="128px" height="128px" />
+    <img class="thumbnail" src="./images/timg-10.jpeg" width="128px" height="128px" />
+    <img class="thumbnail" src="./images/timg-11.jpeg" width="128px" height="128px" />
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        /*
+            Overflow
+            overflow 属性可以控制内容溢出元素框时在对应的元素区间内添加滚动条。
+            值	        描述
+            visible	    默认值。内容不会被修剪，会呈现在元素框之外。
+            hidden	    内容会被修剪，并且其余内容是不可见的。
+            scroll	    内容会被修剪，但是浏览器会显示滚动条以便查看其余的内容。
+            auto	    如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容。
+            inherit	    规定应该从父元素继承 overflow 属性的值。
+
+            注意:overflow 属性只工作于指定高度的块元素上。
+
+            默认情况下，overflow 的值为 visible， 意思是内容溢出元素框。
+
+        */
+
+        div.visible {
+            background-color: gray;
+            width: 100px;
+            height: 50px;
+            border: 1px solid green;
+            color: red;
+            overflow: visible;
+            /* overflow: hidden; */
+            /* overflow: scroll; */
+            /* overflow: auto; */
+        }
+
+        div.hidden {
+            background-color: gray;
+            width: 200px;
+            height: 50px;
+            border: 1px solid yellow;
+            overflow: hidden;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="visible">
+        <p>我就是一段文字，测试overflow，看看内部元素的内容超出父容器怎么显示</p>
+    </div>
+
+
+</body>
+
+</html>
