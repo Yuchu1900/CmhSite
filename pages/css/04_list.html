@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <style>
+        /* 
+            列表<ul> <ol>
+            list-style-type: 前面图标类型，比如圆形、空心、方形
+            list-style-position: 内对齐，外对齐，当前面图标不一样大小时，是文字对齐，还是图标对齐
+            list-style-image: 前面的图标更换成自定义图片
+        */
+        ul.a {
+            list-style-type: circle;
+            /* list-style-type: square; */
+            background-color: gray;
+            background-image: url("./images/chick.jpg");
+            background-repeat: no-repeat;
+            height: 300px;
+            background-position: 12px 5px;
+            padding-left: 60px;
+            margin: 0px;
+        }
+
+        ol.b {
+            list-style-type: upper-roman;
+            list-style-position: inside;
+            /* list-style-position: outside; */
+            /* list-style-type: lower-alpha; */
+        }
+
+        ul.c {
+            list-style-image: url('./images/timg-1.jpeg');
+            padding-left: 50px;
+        }
+
+        li.d {
+            font-size: 23px;
+            font-family: '华文黑提';
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="a">
+        <li>咖啡</li>
+        <li>茶</li>
+        <li>牛奶</li>
+    </ul>
+    <ol class="b">
+        <li>苹果</li>
+        <li>梨</li>
+        <li>香蕉</li>
+    </ol>
+    <ul class="c">
+        <li class="d">宝马</li>
+        <li>奥迪</li>
+        <li>奔驰</li>
+    </ul>
+</body>
+
+</html>

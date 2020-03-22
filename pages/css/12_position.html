@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        /*
+            定位position
+            元素可以使用的顶部，底部，左侧和右侧属性定位。然而，这些属性无法工作，除非是先设定position属性。他们也有不同的工作方式，这取决于定位方法。
+            position有五个值：
+            1.static: 静态定位，是默认的设置，即没有定位，遵循正常的文档流对象，静态定位的元素不会受到top, bottom, left. right影响。
+            2.fixed: 元素的位置相对于浏览器窗口是固定位置，即使窗口里的内容滚动它也是不会移动的。
+            3.relative: 相对定位，元素的定位是相对其正常位置。移动相对定位元素，但它原本所占的空间不会改变。
+              相对定位元素也有可能与其他元素重叠。
+            4.absolute: 绝对定位，元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置就相对于<html>
+              绝对定位使元素的位置与文档流无关，因此不占据空间，并且有可能与其他元素重叠。
+            5.sticky: 粘性定位，基于用户的滚动位置来定位。粘性定位依赖于用户的滚动，在relativ和fixed定位之间切换。
+              
+        */
+        /* fixed定位 */
+        p.fixed {
+            position: fixed;
+            top: 30px;
+            right: 5px;
+        }
+
+        /* 相对定位 */
+        p.relative {
+            position: relative;
+            left: -20px;
+            /* top: 40px; */
+        }
+
+        /* 绝对定位 */
+        p.absolute {
+            position: absolute;
+            left: 200px;
+            top: 300px;
+        }
+
+        /* 粘性定位 */
+        p.sticky {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0px;
+            padding: 5px;
+            background-color: #cae8ca;
+            border: 2px solid #4caf50;
+        }
+
+        /* 
+            重叠顺序 
+            元素的定位与文档流无关，所以它们可以覆盖页面上的其它元素
+            z-index属性指定了一个元素的堆叠顺序（哪个元素应该放在前面，或后面）
+            一个元素可以有正数或负数的堆叠顺序。具有更高堆叠顺序的元素总是在较低的堆叠顺序元素的前面。
+            注意： 如果两个定位元素重叠，没有指定z - index，最后定位在HTML代码中的元素将被显示在最前面。
+        */
+        /* 下面图片样式的z-index设置为-1，优先级低，那么它会被没有设置的正常的元素遮盖 */
+        img {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="fixed">我是fixed定位，一直固定在这</p>
+    <P class="relative">我是relativ定位，相对正常位置向左移动，但是文档流的空间要给我留着</P>
+    <P>我是普通的文本</P>
+    <P>我是普通的文本</P>
+    <P>我是普通的文本</P>
+    <P class="sticky">我是sticky定位，试着将页面滚动的最后</P>
+    <P>我是普通的文本</P>
+    <P>我是普通的文本</P>
+    <P>我是普通的文本</P>
+    <P>我是普通的文本</P>
+    <P>我是普通的文本</P>
+    <P>我是普通的文本</P>
+    <P>我是普通的文本</P>
+    <P>我是普通的文本</P>
+    <P>我是普通的文本</P>
+    <P>我是普通的文本</P>
+    <P>我是普通的文本</P>
+    <P>我是普通的文本</P>
+    <P>我是普通的文本</P>
+    <P>我是普通的文本</P>
+    <img src="./images/chick.jpg" width='320' height="240" />
+    <P>我是普通的文本</P>
+    <P>我是普通的文本</P>
+    <P>我是普通的文本</P>
+    <P>我是普通的文本</P>
+    <P>我是普通的文本</P>
+    <P>我是普通的文本</P>
+    <P>我是普通的文本</P>
+    <P>我是普通的文本</P>
+    <P>我是普通的文本</P>
+    <p class="absolute">我是absolute定位，虽然放在文档流最后，但我不占文档流空间，而是在这里</p>
+</body>
+
+</html>

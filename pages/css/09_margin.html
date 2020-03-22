@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        /*
+            外边距margin
+            margin 清除周围的（外边框）元素区域。margin 没有背景颜色，是完全透明的。
+            margin 可以单独改变元素的上，下，左，右边距，也可以一次改变所有的属性。
+            margin从外边框到父容器的
+        */
+        p.top {
+            background-color: yellow;
+            margin-top: 50px;
+        }
+
+        p.percent {
+            background-color: red;
+            margin-bottom: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        我没有设置margin
+    </p>
+    <p class="top">
+        我设置的margin-top 50px
+    </p>
+    <p class="percent">
+        我设置了margin-bottom 25%
+    </p>
+    <p>
+        我没有设置margin
+    </p>
+</body>
+
+</html>

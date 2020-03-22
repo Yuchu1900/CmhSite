@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        /*
+            内边距padding
+            当元素的 padding（填充）内边距被清除时，所释放的区域将会受到元素背景颜色的填充。
+            单独使用 padding 属性可以改变上下左右的填充。
+
+        */
+        p.one {
+            padding: 2cm;
+            background-color: yellow;
+        }
+
+        p.two {
+            background-color: green;
+            padding: 30px;
+        }
+
+        p.left {
+            background-color: red;
+            padding-left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="one">
+        内边距设置为2cm，黄色区块是p标签区域
+    </p>
+    <p class="two">
+        内边距设置为30px, 绿色区块是p标签区域
+    </p>
+    <p class="left">
+        左侧内边距设置为100px, 红色区块是p标签区域
+    </p>
+
+</body>
+
+</html>

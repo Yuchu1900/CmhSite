@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        /*
+            表格<table>
+            border: 边框
+            border-collapse: 边框折叠。因为表格<table>和<td>、<th>的边框是相互独立的，所以不设置这个，看起来就会有两个边框。
+        */
+
+        /* 表格整体 */
+        table {
+            /*折叠边框*/
+            border-collapse: collapse;
+            /* 宽度铺满屏幕 */
+            width: 100%;
+            /* 背景颜色 */
+            background-color: white;
+            /* 背景图片 */
+            /* background-image: url(./images/chick.jpg); */
+            /* 边框： 线宽、实线、颜色 */
+            border: 2px solid black;
+            /* 字体 */
+            font-family: "行楷-简";
+            /* 字体大小 */
+            font-size: 2em;
+
+        }
+
+        /* 表头 */
+        th {
+            background-color: #A7C942;
+            border: 1px solid #98bf21;
+            /* 上下左右的空白 */
+            padding: 3px 7px 2px 7px;
+        }
+
+        /* 单元格 */
+        td {
+            border: 1px solid #98bf21;
+            /* 单元格背景颜色 */
+            background-color: #EAF2D3;
+            /* 文字左右对齐方式 */
+            text-align: center;
+            /* 文字上下对齐方式 */
+            vertical-align: center;
+            /* 文字颜色 */
+            color: red;
+            padding: 3px 7px 2px 7px;
+        }
+
+        /* 表格标题 */
+        caption {
+            /* 标题位置 */
+            caption-side: bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption>高三三班学生信息表</caption>
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+        </tr>
+        <tr>
+            <td>张三</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td>李四</td>
+            <td>25</td>
+        </tr>
+    </table>
+</body>
+
+</html>

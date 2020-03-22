@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        /*
+            1.可见性visibility
+            其值：
+            visible: 表示可见
+            hidden: 表示隐藏元素，虽然看不见元素，但是位置还被这个元素占据
+            2.显示display
+            none: 也表示隐藏元素，而且元素不再占据位置
+
+        */
+        h1.hidden {
+            height: 100px;
+            visibility: hidden;
+        }
+
+        h1.none {
+            height: 100px;
+            display: none;
+        }
+
+        h1 {
+            background-color: yellow;
+        }
+
+        /* 
+            块元素和内联元素
+            块元素：占据全部宽度，摒弃前后都有一个换行符，例如<h1>、<p>、<div>、<li>
+            内联元素：只占据必要的宽度，不强制换行，例如：<span>、<a>
+
+            有时我们希望将块元素显示为内联元素，比如不自动换行，
+            可以用display: inline来实现
+            同样也可以将内联元素显示为块元素，
+            可以用display: block来实现 
+        */
+        li {
+            display: inline;
+        }
+
+        span {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 隐藏元素 -->
+    <h1 class="hidden">我是hidden</h1>
+    <h1>我上面有一个高度为100px的hidden的h1</h1>
+    <h1 class="none">我是none</h1>
+    <h1>我上面有一个高度为100px的none的h1</h1>
+
+    <!-- 
+        块元素显示为内联元素
+        下面的三个<li>标签内容将显示在同一行
+    -->
+    <ul>
+        <li>宝马</li>
+        <li>奔驰</li>
+        <li>奥迪</li>
+    </ul>
+
+    <span>我是span，我本来不会自动换行，但是加了display:block会自动换行</span>
+    <span>我是另外一个span，下面也会自动换行</span>
+    <h2>我是一个h2标题</h2>
+</body>
+
+</html>
