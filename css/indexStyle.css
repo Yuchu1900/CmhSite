@@ -1,15 +1,6 @@
-@font-face{
-    font-family: "Songti";
-    src:url(../webfonts/Songti.ttc)
-}
-@font-face{
-    font-family: "PingFang";
-    src:url(../webfonts/PingFang.ttc)
-}
-@font-face{
-    font-family: "HuaWenXingKai";
-    src:url(../webfonts/HuaWenXingKai.ttf)
-}
+
+/* 导入字体 */
+@import "fonts.css";
 
 * {
     box-sizing:border-box;
