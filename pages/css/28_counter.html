@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        /* 
+            计数器
+            CSS 计数器通过一个变量来设置，根据规则递增变量。
+            CSS 计数器使用到以下几个属性：
+            counter-reset - 创建或者重置计数器
+            counter-increment - 递增变量
+            content - 插入生成的内容
+            counter() 或 counters() 函数 - 将计数器的值添加到元素
+
+        */
+        /* 计数器使用前必须先重置 */
+        body {
+            counter-reset: section;
+        }
+
+        h1 {
+            counter-reset: susection;
+        }
+
+        h1::before {
+            counter-increment: section;
+            content: "Section"counter(section) ": ";
+        }
+
+        h2::before {
+            counter-increment: subsection;
+            content: counter(section) "."counter(subsection) " ";
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HTML 教程</h1>
+    <h2>HTML第一章</h2>
+    <h2>HTML第二章</h2>
+    <h1>JavaScript 教程</h1>
+    <h2>JS第一章</h2>
+    <h2>JS第二章</h2>
+    <h2>JS第三章</h2>
+
+</body>
+
+</html>

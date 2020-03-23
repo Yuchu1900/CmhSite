@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        /* 
+            图像拼合技术
+            图像拼合就是单个图像的集合。多个图像不是分别加载，而是合并成一个图像，显示时只显示一部分就好了。
+            有许多图像的网页可能需要很长的时间来加载和生成多个服务器的请求。
+            使用图像拼合会降低服务器的请求数量，并节省带宽。
+
+        */
+
+        img.part1 {
+            width: 120px;
+            height: 182px;
+            background: url(./images/young.png) 0px 0px;
+        }
+
+        img.part2 {
+            width: 120px;
+            height: 182px;
+            background: url(./images/young.png) -240px 0px;
+        }
+
+        /* 创建一个导航列表 */
+        #navlist {
+            position: relative;
+        }
+
+        #navlist li {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            position: absolute;
+            top: 0px;
+        }
+
+        #navlist li,
+        #navlist a {
+            height: 182px;
+            display: block;
+        }
+
+        #part1 {
+            left: 0px;
+            width: 120px;
+        }
+
+        #part1 {
+            background: url("./images/young.png") 0px 0px;
+        }
+
+
+
+        #part2 {
+            left: 120px;
+            width: 120px;
+        }
+
+        #part2 {
+            background: url("./images/young.png") -240px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1.显示部分图像 -->
+    <!-- <img class="part1">
+    <img class="part2"> -->
+
+    <!-- 2. 使用导航列表显示部分图像 -->
+    <ul id="navlist">
+        <li id="part1"><a href="/"></a></li>
+        <li id="part2"><a href="/"></a></li>
+    </ul>
+</body>
+
+</html>

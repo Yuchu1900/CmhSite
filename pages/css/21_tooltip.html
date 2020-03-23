@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        /* 
+        提示工具(Tooltip)
+        提示工具在鼠标移动到指定元素后触发, 对应的按钮等元素会出现提示框 
+    */
+
+        /* 1. 基础提示框Tooltip */
+
+        /* Tooltip 容器 */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+            margin-top: 200px;
+        }
+
+        /* Tooltip 文本样式(开始隐藏) */
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            /* 定位 */
+            position: absolute;
+            z-index: 1;
+
+            /* 显示在右侧 */
+            /* top: -5px;
+            left: 105%; */
+
+            /* 显示在左侧 */
+            /* top: -5px;
+            right: 105%; */
+
+            /* 显示在下方 */
+            /* top:150%;
+            left: 50%;
+            margin-left: -60px; */
+
+            /* 显示在上方 */
+            bottom: 150%;
+            left: 50%;
+            margin-left: -60px;
+
+            /* 淡入 - 1秒内从 0% 到 100% 显示: */
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        /* Tooltip提示框的箭头 */
+        .tooltip .tooltiptext:after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: black transparent transparent transparent;
+        }
+
+        /* 鼠标移动上去后显示提示框 */
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+
+            /* 配合上面实现淡入效果 */
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body style="text-align: center;">
+    <div class="tooltip">鼠标移动到这
+        <span class="tooltiptext">提示文本</span>
+    </div>
+
+</body>
+
+</html>

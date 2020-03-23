@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        /* 
+            具有特定属性的HTML元素样式 
+            具有特定属性的HTML元素样式不仅仅是class和id。
+            注意：IE7和IE8需声明!DOCTYPE才支持属性选择器！IE6和更低的版本不支持属性选择器。
+            定义一个属性和或其值并为其配置样式，当元素(标签)包含这个属性时，样式就会套用到这个元素上。
+        */
+
+        /* 有title这个属性的所有标签，样式都会生效 */
+        [title] {
+            color: blue;
+        }
+
+        /* 有title属性并且属性值为cmh的所有标签，样式都会生效 */
+        [title=cmh] {
+            border: 5px solid green;
+        }
+
+        /* 包含指定值的title属性的元素样式的例子，使用（~）分隔属性和值
+            也就是只要title值中有包含hello这个字符串，样式就会生效
+        */
+        p[title~=hello] {
+            background-color: greenyellow;
+        }
+
+        /* 
+            "拼接字符串" 类型的比较符号: *=, ^=, $=
+            1.attribute 属性中包含 value:　
+            [attribute~=value] 属性中包含独立的单词为 value，例如：
+                [title~=flower]  -->  <img src="/i/eg_tulip.jpg" title="tulip flower" />
+            [attribute*=value] 属性中做字符串拆分，只要能拆出来 value 这个词就行，例如：
+                [title*=flower]   -->  <img src="/i/eg_tulip.jpg" title="ffffflowerrrrrr" />
+            2.attribute 属性以 value 开头:
+            [attribute|=value] 属性中必须是完整且唯一的单词，或者以 - 分隔开：，例如：
+                [lang|=en]     -->  <p lang="en">  <p lang="en-us">
+            [
+            attribute^=value] 属性的前几个字母是 value 就可以，例如：
+                [lang^=en]    -->  <p lang="ennn">
+            3.attribute 属性以 value 结尾:
+            [attribute$=value] 属性的后几个字母是 value 就可以，例如：
+                a[src$=".pdf"]
+        */
+        [lang|=en] {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>我是h2标题</h2>
+    <img title="cmh" src="./images/timg-3.jpeg" width="128px" height="128px" />
+    <br>
+    <a title="cmh" href="http://www.baidu.com">百度</a>
+    <p title="ccc">我是p标签，虽然设置了title属性，但值不是cmh，所以只有蓝色字体，没有边框</p>
+    <p title="hello world">我是p标签，我包含title属性，并且属性值包含hello字样</p>
+    <h1 title="oh hello">我包含title属性，并且属性值包含hello字样,但我是h1</h1>
+    <p lang="en-us">我是p标签，我包含lang属性，并且值包含en字样</p>
+</body>
+
+</html>
