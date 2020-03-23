@@ -19,10 +19,16 @@ body{
     padding: 30px;
     text-align: center;
     background: url("../images/index_head.jpg");
+    overflow: auto;
 }
 .header h1{
     font-size: 60px;
     font-family: "HuaWenXingKai";
+}
+.header img{
+    width: 32px;
+    height: 32px;
+    float: right;
 }
 
 /* 导航条 */
