@@ -1,0 +1,39 @@
+h1.title {
+    background-color: #EE9A49;
+    width: 90%;
+    color: white;
+    text-align: left;
+    margin: auto;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-bottom: 10px;
+}
+
+div.center {
+    width: 75%;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.card {
+    float: left;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+    border: 3px solid #aaa;
+    transition: 0.3s;
+    width: 19.99999%;
+    border-radius: 5px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    background-color:#f0f0f0;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.card:hover {
+    /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); */
+    border: 3px solid #666;
+    background-color:white;
+}

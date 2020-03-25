@@ -1,43 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>卡片效果</title>
-    <style type="text/css">
-        .card {
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-            transition: 0.3s;
-            width: 40%;
-            border-radius: 5px;
-        }
+    　　
+    <meta charset="UTF-8" />
+    　　<title>demo</title>
 
-        .card:hover {
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-        }
-
-        img {
-            border-radius: 5px 5px 0 0;
-        }
-
+    　　<style type="text/css">
         .container {
-            padding: 2px 16px;
+            width: 40%;
+            position: relative;
+            overflow: hidden;
+            /*为了让大家看清楚效果加的边*/
+            border: 1px solid black;
+        }
+
+        /* 　　支架，用于按2:1的宽高比撑开父级元素，如果是4:3，那么这里改成75%即可 */
+        .bracket {
+            margin-top: 50%;
+        }
+
+        .target {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: blanchedalmond;
         }
     </style>
+
 </head>
+
 <body>
-    <div class="card">
-        <img src="https://static.runoob.com/images/mix/img_avatar.png" alt="Avatar" style="width:100%">
-        <div class="container">
-            <h4><b>菜鸟教程</b></h4> 
-            <p>www.runoob.com</p> 
-        </div>
-    </div>
-    <div class="card">
-        <img src="https://static.runoob.com/images/mix/img_avatar.png" alt="Avatar" style="width:100%">
-        <div class="container">
-            <h4><b>菜鸟教程</b></h4> 
-            <p>www.runoob.com</p> 
-        </div>
+    <div class="container">
+        <div class="bracket"></div>
+        <div class="target"></div>
     </div>
 </body>
+
 </html>

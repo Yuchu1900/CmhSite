@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link href="./css/course.css" rel="stylesheet1">
+      
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./css//course.css" charset="utf-8">
+    <title>卡片效果</title>
+
+
 </head>
+
 <body>
+    <h1 class="title">课程项目</h1>
+    <div class="center">
+        <div class="card" id="div_html">
+            <img src="./images/html_course.png" alt="Avatar" style="width:100%">
+            <div class="container">
+                <h4><b>HTML教程实例</b></h4>
+                <p>新手入门</p>
+            </div>
+        </div>
+        <div class="card" id="div_css">
+            <img src="./images/html_course.png" alt="Avatar" style="width:100%">
+            <div class="container">
+                <h4><b>CSS教程实例</b></h4>
+                <p>新手入门</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var div_html = document.getElementById("div_html");
+        div_html.onclick = function () {
+            window.location = './html_course/index_html.html';
+        }
+        var div_css = document.getElementById("div_css");
+        div_css.onclick = function () {
+            window.location = './css_course/index_css.html';
+        }
+    </script>
 </body>
+
 </html>
