@@ -18,7 +18,7 @@ div.center {
 .card {
     float: left;
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
-    border: 3px solid #aaa;
+    border: 1px solid #aaa;
     transition: 0.3s;
     width: 19.99999%;
     border-radius: 5px;
@@ -29,11 +29,16 @@ div.center {
     padding-top: 15px;
     padding-bottom: 15px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 16px;
+    color: #FF7F00;
 }
 
 .card:hover {
     /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); */
-    border: 3px solid #666;
+    border: 1px solid #999;
     background-color:white;
+    color: #FFB90F;
+}
+.card:visited{
+    color: #FFB90F;
 }
