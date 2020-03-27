@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        /*
+            圆角、阴影、图像边框
+            从这节开始，开始CSS3内容。
+            1. border-radius: 圆角，用于设置边框、图片的圆角。
+            2. box-shadow: 阴影效果
+            3. border-image: 可以使用图像创建一个边框。
+        */
+
+        /* 圆角 */
+        div.corner {
+            border: 2px solid #666;
+            border-radius: 8px;
+            width: 150px;
+            height: 50px;
+        }
+
+        img.corner {
+            border-radius: 15px 15px 0px 0px;
+        }
+
+        /* 阴影效果 */
+        div.shadow {
+            width: 100px;
+            height: 50px;
+            box-shadow: 10px 10px 5px #888;
+            margin-bottom: 30px;
+            border-bottom-right-radius: 8px;
+            /* border-bottom-left-radius: 8px; */
+            /* border-top-left-radius: 8px; */
+            /* border-top-right-radius: 8px; */
+        }
+
+        /* 图片边框 */
+        div.image_border {
+            border: 72px solid #ddd;
+            /* width: 120px;
+            height: 120px; */
+            border-width: 3em;
+            border-image: url(./images/timg-1.jpeg) 72 repeat;
+            /* Safari 5 and older */
+            -webkit-border-image: url(./images/timg-1.jpeg) 72 repeat;
+            /* Opera */
+            -o-border-image: url(./images/timg-1.jpeg) 72 repeat;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 圆角 -->
+    <div class="corner">
+        我的边框有圆角
+    </div>
+    <img class="corner" src="./images/chick.jpg" alt="阴影">
+
+    <!-- 阴影 -->
+    <div class="shadow">
+        我有阴影
+    </div>
+
+    <!-- 图片边框 -->
+    <div class="image_border">
+        我的边框是图片
+    </div>
+</body>
+
+</html>

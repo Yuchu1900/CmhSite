@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        /* 
+            CSS3 2D 转换
+            CSS3 转换可以对元素进行移动、缩放、转动、拉长或拉伸。
+            函数	                 描述
+            matrix(n,n,n,n,n,n)	    定义 2D 转换，使用六个值的矩阵。
+            translate(x,y)	        定义 2D 转换，沿着 X 和 Y 轴移动元素。
+            translateX(n)	        定义 2D 转换，沿着 X 轴移动元素。
+            translateY(n)	        定义 2D 转换，沿着 Y 轴移动元素。
+            scale(x,y)	            定义 2D 缩放转换，改变元素的宽度和高度。
+            scaleX(n)	            定义 2D 缩放转换，改变元素的宽度。
+            scaleY(n)	            定义 2D 缩放转换，改变元素的高度。
+            rotate(angle)	        定义 2D 旋转，在参数中规定角度。
+            skew(x-angle,y-angle)	定义 2D 倾斜转换，沿着 X 和 Y 轴。
+            skewX(angle)	        定义 2D 倾斜转换，沿着 X 轴。
+            skewY(angle)	        定义 2D 倾斜转换，沿着 Y 轴。
+
+
+            3D 转换方法
+            函数	                    描述
+            matrix3d(n,n,n,n,n,n,
+            n,n,n,n,n,n,n,n,n,n)	    定义 3D 转换，使用 16 个值的 4x4 矩阵。
+            translate3d(x,y,z)	        定义 3D 转化。
+            translateX(x)	            定义 3D 转化，仅使用用于 X 轴的值。
+            translateY(y)	            定义 3D 转化，仅使用用于 Y 轴的值。
+            translateZ(z)	            定义 3D 转化，仅使用用于 Z 轴的值。
+            scale3d(x,y,z)	            定义 3D 缩放转换。
+            scaleX(x)	                定义 3D 缩放转换，通过给定一个 X 轴的值。
+            scaleY(y)	                定义 3D 缩放转换，通过给定一个 Y 轴的值。
+            scaleZ(z)	                定义 3D 缩放转换，通过给定一个 Z 轴的值。
+            rotate3d(x,y,z,angle)	    定义 3D 旋转。
+            rotateX(angle)	            定义沿 X 轴的 3D 旋转。
+            rotateY(angle)	            定义沿 Y 轴的 3D 旋转。
+            rotateZ(angle)	            定义沿 Z 轴的 3D 旋转。
+            perspective(n)	            定义 3D 转换元素的透视视图。
+        */
+        /* 平移: translate x y */
+        div.translate {
+            transform: translate(100px, 50px);
+            /*IE9*/
+            -ms-transform: translate(100px, 50px);
+            /* Safari and Chrome*/
+            -webkit-transform: translate(100px, 50px);
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+
+        /* 
+            旋转rotate
+            rotate()方法，在一个给定度数顺时针旋转的元素。负值是允许的，这样是元素逆时针旋转。
+        */
+        div.rotate {
+            transform: rotate(30deg);
+            -ms-transform: rotate(30deg);
+            -webkit-transform: rotate(30deg);
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            margin: 100px 50px;
+        }
+
+        /* 
+            缩放scale
+            scale()方法，该元素增加或减少的大小，取决于宽度（X轴）和高度（Y轴）的参数。
+            scale（2,3）转变宽度为原来的大小的2倍，和其原始大小3倍的高度。
+        */
+        div.scale {
+            -ms-transform: scale(2, 3);
+            /* IE 9 */
+            -webkit-transform: scale(2, 3);
+            /* Safari */
+            transform: scale(2, 3);
+            /* 标准语法 */
+
+            height: 50px;
+            width: 50px;
+            background-color: orange;
+            margin-top: 100px;
+            margin-left: 100px;
+        }
+
+        /* 
+            斜切
+            语法：transform:skew(<angle> [,<angle>]);
+            包含两个参数值，分别表示X轴和Y轴倾斜的角度，如果第二个参数为空，则默认为0，参数为负表示向相反方向倾斜。
+                skewX(<angle>);表示只在X轴(水平方向)倾斜。
+                skewY(<angle>);表示只在Y轴(垂直方向)倾斜。
+            skew(30deg,20deg) 元素在X轴和Y轴上倾斜20度30度。 
+        */
+
+        div.shew {
+            transform: skew(30deg, 20deg);
+            -ms-transform: skew(30deg, 20deg);
+            /* IE 9 */
+            -webkit-transform: skew(30deg, 20deg);
+            /* Safari and Chrome */
+
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin: 100px;
+        }
+
+        /* 
+            matrix()方法 
+            matrix 方法有六个参数，包含旋转，缩放，移动（平移）和倾斜功能。    
+        */
+        div.matrix {
+            transform: matrix(0.866, 0.5, -0.5, 0.866, 0, 0);
+            /* IE 9 */
+            -ms-transform: matrix(0.866, 0.5, -0.5, 0.866, 0, 0);
+            /* Safari and Chrome */
+            -webkit-transform: matrix(0.866, 0.5, -0.5, 0.866, 0, 0);
+
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 100px;
+        }
+
+        /* 3D变换 */
+
+        /* rotate3d() 定义 3D旋转。 */
+        div.rotate3d {
+            transform: rotate3d(1, 2, -1, 192deg);
+            /* Safari 与 Chrome */
+            -webkit-transform: rotate3d(1, 2, -1, 192deg);
+
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+            margin: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="translate">我平移了100px,50px</div>
+    <div class="rotate">我顺时针旋转了30度</div>
+    <div class="scale">我放大了</div>
+    <div class="shew">我倾斜了20度和30度</div>
+    <div class="matrix">我是matrix，所有2D变换都有</div>
+    <div class="rotate3d">我是3D缩放</div>
+</body>
+
+</html>

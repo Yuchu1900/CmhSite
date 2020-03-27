@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        div.bg_size {
+            background: url(./images/chick.jpg);
+            /* background-size: 320px 240px; */
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            width: 320px;
+            height: 240px;
+            background-color: green;
+        }
+
+        /* 
+            background-origin；指定了背景图像的位置区域。有三个区域可以放图片
+            content-box：内容区
+            padding-box：padding区
+            border-box：边框区
+        */
+        div.bg_origin {
+            background: url(./images/chick.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-origin: content-box;
+            border: 5px solid orange;
+            padding: 30px;
+            width: 320px;
+            height: 240px;
+        }
+
+        /* 多张背景图片 */
+        div.bg_multi {
+            background-color: yellow;
+            background-image: url(./images/timg-2.jpeg), url(./images/timg-3.jpeg);
+            background-repeat: no-repeat;
+            /* 
+                多张图片的属性，用逗号隔开；
+                如果只设置一个属性，那么该属性会应用到所有图片
+            */
+            background-position: left, right;
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg_size">
+        我的背景图片设置了尺寸，
+        如果不设置图片，我只会显示一部分图片；
+        但是如果设置的尺寸没有按照图片的宽高比，
+        会出现图片变形问题；
+    </div>
+
+    <div class="bg_origin">
+        我的背景图片只在内容区里
+    </div>
+
+    <div class="bg_multi">
+        我包含多张背景图
+    </div>
+</body>
+
+</html>

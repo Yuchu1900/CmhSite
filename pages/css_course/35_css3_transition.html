@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        /* 
+            CSS3过渡
+            CSS3中，我们为了添加某种效果可以从一种样式转变到另一个的时候，无需使用Flash动画或JavaScript。
+            属性	                         描述
+            transition	                    简写属性，用于在一个属性中设置四个过渡属性。	
+            transition-property	            规定应用过渡的 CSS 属性的名称。	
+            transition-duration	            定义过渡效果花费的时间。默认是 0。	
+            transition-timing-function	    规定过渡效果的时间曲线。默认是 "ease"。	
+            transition-delay	            规定过渡效果何时开始。默认是 0。	
+
+        */
+        div.transition {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* 过渡时间 */
+            /* transition: 2s; */
+            transition: width 2s, height 2s, transform 2s;
+            /* Safari */
+            -webkit-transition: width 2s, height 2s, -webkit-transform 2s;
+
+        }
+
+        div.transition:hover {
+            width: 200px;
+            height: 200px;
+            /* Chrome, Safari, Opera */
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="transition">把鼠标放我上面</div>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        /* 
+            CSS3 引入字体@font-face 
+            CSS3不仅可以使用电脑上已安装的字体，还可以配置在网站上自带的字体，用户浏览网页时自动下载字体到电脑上，网页就可以显示这个字体了。
+            @font-face规则： 
+            描述符           值              描述
+            font-family	    name	        必需。规定字体的名称。
+            src	            URL	            必需。定义字体文件的 URL。
+            font-stretch	                可选。定义如何拉伸字体。默认是 "normal"。
+                            normal
+                            condensed
+                            ultra-condensed
+                            extra-condensed
+                            semi-condensed
+                            expanded
+                            semi-expanded
+                            extra-expanded
+                            ultra-expanded
+
+            font-style	                    可选。定义字体的样式。默认是 "normal"。
+                            normal
+                            italic
+                            oblique
+
+            font-weight	                    可选。定义字体的粗细。默认是 "normal"。
+                            normal
+                            bold
+                            100
+                            200
+                            300
+                            400
+                            500
+                            600
+                            700
+                            800
+                            900
+            unicode-range	unicode-range	可选。定义字体支持的 UNICODE 字符范围。默认是 "U+0-10FFFF"。
+        */
+        @font-face {
+            font-family: "HuaWenXingKai";
+            src: url(./fonts/HuaWenXingKai.ttf);
+            /* 如果有粗体可以这样设置，在设置样式时，可以用font-weight:bold来指定是使用粗体的 */
+            /* font-weight: bold; */
+        }
+
+        h1.font_xingkai {
+            font-family: 'HuaWenXingKai';
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="font_xingkai">我的字体华文行楷</h1>
+
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        /*  图片效果 */
+
+        /* 1. 圆形图片：多用于用户头像，当宽高设置成不一样时，会成为椭圆形 */
+        img.circle_avatar {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+        }
+
+        /* 2. 缩略图效果：带有外边框的图片 */
+        a.suolue {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        a.suolue:hover {
+            box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        }
+
+        img.size {
+            width: 320px;
+            height: 240px;
+        }
+
+        /* 3. 响应式图片: 图片大小会随着窗口大小变化 */
+        img.response {
+            max-width: 100%;
+            height: auto;
+            width: 960px;
+        }
+
+        /* 4. 图片文本：图片上显示文本 */
+        .container {
+            position: relative;
+            width: 640px;
+            height: 480px;
+        }
+
+        /* 左上角 */
+        .topleft {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            font-size: 18px;
+        }
+
+        /* 右上角 */
+        .topright {
+            position: absolute;
+            top: 8px;
+            right: 16px;
+            font-size: 18px;
+        }
+
+        /* 左下角 */
+        .bottomleft {
+            position: absolute;
+            bottom: 8px;
+            left: 16px;
+            font-size: 18px;
+        }
+
+        /* 右下角 */
+        .bottomright {
+            position: absolute;
+            bottom: 8px;
+            right: 16px;
+            font-size: 18px;
+        }
+
+        img.img_txt {
+            width: 100%;
+            height: auto;
+            opacity: 0.3;
+        }
+
+        /* 5.卡片式图片 */
+        div.polaroid {
+            width: 30%;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-bottom: 25px;
+        }
+
+        div.contain {
+            text-align: center;
+            padding: 10px 20px;
+        }
+
+        /* 6. 图片滤镜 */
+        #filter {
+            width: 25%;
+            height: auto;
+            float: left;
+            max-width: 235px;
+        }
+
+        .blur {
+            -webkit-filter: blur(4px);
+            filter: blur(4px);
+        }
+
+        .brightness {
+            -webkit-filter: brightness(250%);
+            filter: brightness(250%);
+        }
+
+        .contrast {
+            -webkit-filter: contrast(180%);
+            filter: contrast(180%);
+        }
+
+        .grayscale {
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+        }
+
+        .huerotate {
+            -webkit-filter: hue-rotate(180deg);
+            filter: hue-rotate(180deg);
+        }
+
+        .invert {
+            -webkit-filter: invert(100%);
+            filter: invert(100%);
+        }
+
+        .opacity {
+            -webkit-filter: opacity(50%);
+            filter: opacity(50%);
+        }
+
+        .saturate {
+            -webkit-filter: saturate(7);
+            filter: saturate(7);
+        }
+
+        .sepia {
+            -webkit-filter: sepia(100%);
+            filter: sepia(100%);
+        }
+
+        .shadow {
+            -webkit-filter: drop-shadow(8px 8px 10px green);
+            filter: drop-shadow(8px 8px 10px green);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 圆形图片 -->
+    <img class="circle_avatar" src="./images/chick.jpg" alt="圆形图片"><br>
+
+    <!-- 缩略图 -->
+    <a class="suolue" href="./images/chick.jpg">
+        <img class="size" src="./images/chick.jpg" alt="缩略图">
+    </a><br>
+
+    <!-- 响应式图片 -->
+    <img class="response" src="./images/chick.jpg" alt="响应式"><br>
+
+    <!-- 图片文字 -->
+    <div class="container">
+        <img class="img_txt" src="./images/chick.jpg" alt="图片文字">
+        <div class="topleft">左上角</div>
+        <div class="topright">右上角</div>
+        <div class="bottomleft">左下角</div>
+        <div class="bottomright">右下角</div>
+    </div>
+
+    <!-- 卡片式图片 -->
+    <div class="polaroid">
+        <img style="width: 100%;" src="./images/chick.jpg" alt="Norway">
+        <div class="contain">
+            <p>The Troll's tongue in Hardanger, Norway</p>
+        </div>
+    </div>
+
+    <!-- 图片滤镜 -->
+    <img id="filter" src="./images/chick.jpg" alt="Pineapple" width="300" height="300">
+    <img id="filter" class="blur" src="./images/chick.jpg" alt="Pineapple" width="300" height="300">
+    <img id="filter" class="brightness" src="./images/chick.jpg" alt="Pineapple" width="300" height="300">
+    <img id="filter" class="contrast" src="./images/chick.jpg" alt="Pineapple" width="300" height="300">
+    <img id="filter" class="grayscale" src="./images/chick.jpg" alt="Pineapple" width="300" height="300">
+    <img id="filter" class="huerotate" src="./images/chick.jpg" alt="Pineapple" width="300" height="300">
+    <img id="filter" class="invert" src="./images/chick.jpg" alt="Pineapple" width="300" height="300">
+    <img id="filter" class="opacity" src="./images/chick.jpg" alt="Pineapple" width="300" height="300">
+    <img id="filter" class="saturate" src="./images/chick.jpg" alt="Pineapple" width="300" height="300">
+    <img id="filter" class="sepia" src="./images/chick.jpg" alt="Pineapple" width="300" height="300">
+    <img id="filter" class="shadow" src="./images/chick.jpg" alt="Pineapple" width="300" height="300">
+
+
+</body>
+
+</html>

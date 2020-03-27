@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        /* 
+            CSS3文本效果
+            hanging-punctuation	规定标点字符是否位于线框之外。	
+            punctuation-trim	规定是否对标点字符进行修剪。	
+            text-align-last	    设置如何对齐最后一行或紧挨着强制换行符之前的行。	
+            ext-emphasis	    向元素的文本应用重点标记以及重点标记的前景色。	
+            text-justify	    规定当 text-align 设置为 "justify" 时所使用的对齐方法。	
+            text-outline	    规定文本的轮廓。	
+            text-overflow	    规定当文本溢出包含元素时发生的事情。	
+            text-shadow	        向文本添加阴影。	
+            text-wrap	        规定文本的换行规则。	
+            word-break	        规定非中日韩文本的换行规则。	
+            word-wrap	        允许对长的不可分割的单词进行分割并换行到下一行。
+        */
+        /* 文字阴影 */
+        h1.text_shadow {
+            text-shadow: 5px 5px 5px #ff0000;
+        }
+
+        /* 盒子阴影 */
+        div.box_shadow {
+            width: 200px;
+            height: 100px;
+            box-shadow: 10px 10px 5px #888888;
+        }
+
+        /* 卡片阴影效果 */
+        div.card {
+            width: 250px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        div.header {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px;
+            font-size: 40px;
+        }
+
+        div.container {
+            padding: 10px;
+        }
+
+        /* 文字溢出 */
+        div.overflow {
+            white-space: nowrap;
+            width: 12em;
+            overflow: hidden;
+            /* 多出文字会用...来表示 */
+            /* text-overflow: ellipsis; */
+            /* 多出的文字会被直接裁切掉 */
+            text-overflow: clip;
+            border: 1px solid #000000;
+            margin-top: 30px;
+        }
+
+        /* 
+            换行
+            如果某个单词太长，不适合在一个区域内，它扩展到外面：
+            CSS3中，自动换行属性允许您强制文本换行 - 即使这意味着分裂它中间的一个字
+        */
+        p.newline {
+            word-wrap: break-word;
+            width: 11em;
+            border: 1px solid #000;
+        }
+
+        /* 指定换行规则 */
+        p.break_rule {
+            /* 单词遇到换行，保留所有单词 */
+            /* word-break: keep-all; */
+            /* 单词遇到换行，可以打断单词*/
+            word-break: break-all;
+            width: 9em;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 文字阴影 -->
+    <h1 class="text_shadow">我有阴影</h1>
+    <!-- 盒子阴影 -->
+    <div class="box_shadow">我的边框有阴影</div>
+    <!-- 卡片阴影 -->
+    <div class="card">
+        <div class="header">
+            <h1>1</h1>
+        </div>
+        <div class="container">
+            <p>January 1, 2020</p>
+        </div>
+    </div>
+    <!-- 文字溢出 -->
+    <div class="overflow">
+        text flow has two values: ellipsis, clip
+    </div>
+    <!-- 换行 -->
+    <p class="newline"> this text contains a very long word: fdfsdfsdfdsfdsdfsdsdfdsdasdasdarewerewfdfsds</p>
+    <!-- 换行规则 -->
+    <p class="break_rule"> This paragraph contains some text. This line will-break-at-hyphenates.</p>
+
+
+</body>
+
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+        /* 
+            CSS3按钮
+
+        */
+
+        /* 不同类型按钮 */
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        /* 不同颜色按钮 */
+        .button-color1 {
+            background-color: #008cba;
+        }
+
+        .button-color2 {
+            background-color: red;
+        }
+
+        /* 不同大小 */
+        .button-size1 {
+            font-size: 10px;
+        }
+
+        .button-size2 {
+            font-size: 20px;
+        }
+
+        /* 圆角按钮 */
+        .button-radius1 {
+            border-radius: 4px;
+            background-color: orange;
+        }
+
+        .button-radius2 {
+            border-radius: 50%;
+            background-color: #333;
+        }
+
+        /* 带边框按钮 */
+        .button-border1 {
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+        }
+
+        .button-border2 {
+            background-color: white;
+            color: black;
+            border: 2px solid #e7e7e7;
+        }
+
+        /* 悬停按钮 */
+        .button-flow-base {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            -webkit-transition-duration: 0.4s;
+            /* Safari */
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .button-flow1 {
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+        }
+
+        .button-flow1:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* 按钮阴影 */
+        .button-shadow-base {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s;
+            /* Safari */
+            transition-duration: 0.4s;
+        }
+
+        .button-shadow1 {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .button-shadow2:hover {
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        /* 禁用按钮 */
+        .disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        /* 按钮宽度 */
+        .button-width {
+            margin-left: 20px;
+            margin-right: 20px;
+            width: 100%;
+        }
+
+        /* 按钮组 */
+        .button-group {
+            background-color: #4CAF50;
+            /* Green */
+            border: 1px solid green;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            float: left;
+        }
+
+        .button-group:hover {
+            background-color: #3e8e41;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* 按钮动画 */
+        .button-anim {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #f4511e;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .button-anim span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button-anim span:after {
+            content: '»';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button-anim:hover span {
+            padding-right: 25px;
+        }
+
+        .button-anim:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+        /* 点击水波纹效果 */
+        .button-water {
+            position: relative;
+            background-color: #4CAF50;
+            border: none;
+            font-size: 28px;
+            color: #FFFFFF;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            -webkit-transition-duration: 0.4s;
+            /* Safari */
+            transition-duration: 0.4s;
+            text-decoration: none;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .button-water:after {
+            content: "";
+            background: #90EE90;
+            display: block;
+            position: absolute;
+            padding-top: 300%;
+            padding-left: 350%;
+            margin-left: -20px !important;
+            margin-top: -120%;
+            opacity: 0;
+            transition: all 0.8s
+        }
+
+        .button-water:active:after {
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+            transition: 0s;
+        }
+
+        /* 按压效果 */
+        .button-press {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 24px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+        .button-press:hover {
+            background-color: #3e8e41
+        }
+
+        .button-press:active {
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 不同类型按钮 -->
+    <button>默认按钮</button>
+    <a href="#" class="button">a链接按钮</a>
+    <button class="button">Button按钮</button>
+    <input type="button" class="button" value="Input按钮"><br>
+    <!-- 不同颜色按钮 -->
+    <button class="button button-color1">蓝色按钮</button>
+    <button class="button button-color2">红色按钮</button><br>
+    <!-- 不同大小按钮 -->
+    <button class="button button-size1">小按钮</button>
+    <button class="button button-size2">大按钮</button><br>
+
+    <!-- 圆角按钮 -->
+    <button class="button button-radius1">圆角按钮</button>
+    <button class="button button-radius2">椭圆按钮</button><br>
+
+    <!-- 带边框按钮 -->
+    <button class="button button-border1">带边框按钮</button>
+    <button class="button button-border2">带边框按钮</button><br>
+
+    <!-- 悬停按钮 -->
+    <button class="button-flow-base button-flow1">Green</button><br>
+
+    <!-- 按钮阴影 -->
+    <button class="button-shadow-base button-shadow1">阴影按钮</button>
+    <button class="button-shadow-base button-shadow2">鼠标悬停后出现阴影</button><br>
+
+    <!-- 禁用按钮 -->
+    <button class="button disabled">禁用按钮</button><br>
+
+    <!-- 按钮宽度 -->
+    <button class="button button-width">按钮宽度</button><br>
+
+    <!-- 按钮组 -->
+    <button class="button-group">按钮组</button>
+    <button class="button-group">按钮组</button>
+    <button class="button-group">按钮组</button>
+    <button class="button-group">按钮组</button>
+    <div class="clearfix"></div>
+
+    <!-- 按钮动画 -->
+    <button class="button-anim" style="vertical-align:middle"><span>Hover </span></button><br>
+
+    <!-- 点击水波纹效果 -->
+    <button class="button-water">点击水波纹</button><br>
+
+    <!-- 按压效果 -->
+    <button class="button-press">按压效果</button>
+</body>
+
+</html>
