@@ -1,6 +1,6 @@
 
 /* 导入字体 */
-@import "fonts.css";
+/* @import "fonts.css"; */
 
 * {
     box-sizing:border-box;
@@ -9,7 +9,7 @@ body{
     /* font-family: Arial; */
     padding: 10px;
     background: #f1f1f1;
-    font-family: "PingFang";
+    /* font-family: "PingFang"; */
     
 }
 
@@ -23,7 +23,7 @@ body{
 }
 .header h1{
     font-size: 60px;
-    font-family: "HuaWenXingKai";
+    /* font-family: "HuaWenXingKai"; */
 }
 .header img{
     width: 32px;
