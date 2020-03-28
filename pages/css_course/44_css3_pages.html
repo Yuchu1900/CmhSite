@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="./style/index_css.css" charset="utf-8">
+    <style>
+        /* 
+            CSS3分页
+            如果你的网站有很多个页面，你就需要使用分页来为每个页面做导航。
+        */
+        ul.pagination {
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul.pagination li {
+            display: inline;
+        }
+
+        ul.pagination li a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            /* 圆角 */
+            /* border-radius: 5px; */
+            /* 鼠标悬停过渡效果 */
+            transition: background-color .3s;
+            /* 边框 */
+            border: 1px solid #ddd;
+            /* 分页间隔 */
+            margin: 0 4px;
+            /* 字体大小 */
+            font-size: 22px;
+        }
+
+        /* 第一个 边框导圆角 */
+        .pagination li:first-child a {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        /* 最后一个 边框导圆角*/
+        .pagination li:last-child a {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        /* 选中时 */
+        ul.pagination li a.active {
+            background-color: #4caf50;
+            color: white;
+            /* border-radius: 5px; */
+            border: 1px solid #4caf50;
+        }
+
+        /* 鼠标放上时 */
+        ul.pagination li a:hover:not(.active) {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div style="text-align: center;">
+        <ul class="pagination">
+            <li><a href="#">«</a></li>
+            <li><a href="#">1</a></li>
+            <li><a class="active" href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">»</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>
